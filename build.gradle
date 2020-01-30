@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group 'de.coonh.de'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation fileTree(dir: 'E:/IntelliJ/Libaries', include: ['*.jar'])
+    compile group: 'org.json', name: 'json', version: '20190722'
+}
+jar {
+    manifest {
+        attributes 'Main-Class': 'Main'
+    }
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+}
+
+
