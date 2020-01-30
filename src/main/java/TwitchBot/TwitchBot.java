@@ -133,7 +133,6 @@ public class TwitchBot{
 
     public void sendMessage(Object message, Channel channel) {
         try {
-            System.out.println(message.toString());
             this.writer.write("PRIVMSG " + channel + " :" + message.toString() + "\r\n");
             this.writer.flush();
         } catch (IOException var4) {
@@ -141,16 +140,6 @@ public class TwitchBot{
         }
 
         LOGGER.log(Level.INFO, "> MSG " + channel + " : " + message.toString());
-    }
-
-    public static String convertToUTF8(String s) {
-        String out = null;
-        try {
-            out = new String(s.getBytes("UTF-8"), "ISO-8859-1");
-        } catch (java.io.UnsupportedEncodingException e) {
-            return null;
-        }
-        return out;
     }
 
     public static Logger getLOGGER() {

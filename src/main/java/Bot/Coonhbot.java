@@ -6,42 +6,53 @@ import TwitchBot.Channel;
 import TwitchBot.User;
 import org.json.JSONObject;
 
+import javax.sound.midi.Soundbank;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.util.ArrayList;
 
 public class Coonhbot extends TwitchBot {
 
+    private Channel channel;
+
     public Coonhbot(){
-        JSONObject js = new JSONObject(FileLoader.getInstance().readFile("settings.txt"));
-        this.setUsername(js.getString("botname"));
-        this.setOauth_Key(js.getString("OAuth-Token"));
-        this.setClientID(js.getString("Client-ID"));
+        this.setUsername(Settings.getInstance().getSetting("botname"));
+        this.setOauth_Key(Settings.getInstance().getSetting("OAuth-Token"));
+        this.setClientID(Settings.getInstance().getSetting("Client-ID"));
+
+        this.connect();
+
+        channel = this.joinChannel(Settings.getInstance().getSetting("streamername"));
     }
     @Override
     public void onMessage(User user, Channel channel, String message)
     {
         if (message.toLowerCase().contains("hallo coonhbot")){
             String answer = "Hallo "+ user +"! Schön, dass du hier bist.";
-            System.out.println("Hallo "+ user +"! Schön, dass du hier bist.");
-            System.out.println("Hier: "+answer);
             sendMessage(answer,channel);
 
         }
+    }
+
+    /**
+     * Gets the current viewers every time interval and saves the new currency amounts
+     */
+    public void saveCurrency(){
+        JSONObject currencyData = new JSONObject(FileLoader.getInstance().readFile("currency.txt"));
+        for(User user : channel.getViewers()){
+            if(!currencyData.has(user.toString())){
+                currencyData.put(user.toString(),10);
+            }else{
+                currencyData.put(user.toString(),currencyData.getInt(user.toString())+10+"\n");
+            }
+        }
+        FileLoader.getInstance().writeFile("currency.txt",currencyData.toString());
     }
 
     @Override
     public void onCommand(User user, Channel channel, String command)
     {
 
-    }
-
-    public static String convertFromUTF8(String s) {
-        String out = null;
-        try {
-            out = new String(s.getBytes("ISO-8859-1"), "UTF-8");
-        } catch (java.io.UnsupportedEncodingException e) {
-            return null;
-        }
-        return out;
     }
 }

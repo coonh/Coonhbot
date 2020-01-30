@@ -14,7 +14,7 @@ public class FileLoader {
     private final String projectpath = System.getProperty("user.dir")+File.separator+"Data";
 
     private FileLoader() {
-        System.out.println(projectpath);
+        System.out.println("Project-Path: "+projectpath);
     }
 
     public static FileLoader getInstance() {
@@ -24,12 +24,13 @@ public class FileLoader {
         return FileLoader.instance;
     }
 
-    public File loadFile(String fileName){
+    private File loadFile(String fileName){
         File file = new File(projectpath+File.separator+fileName);
         if(file.exists()) return file;
         file.getParentFile().mkdirs();
         try {
             file.createNewFile();
+            writeFile(fileName,"{}");
             return file;
         }catch (IOException i){i.printStackTrace();}
         return null;
@@ -44,6 +45,17 @@ public class FileLoader {
             e.printStackTrace();
         }
         return "ERROR";
+    }
+
+    public void writeFile(String fileName, String content){
+        try {
+            File file = loadFile(fileName);
+            BufferedWriter writter = new BufferedWriter(new FileWriter((file)));
+            writter.write(content);
+            writter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }
