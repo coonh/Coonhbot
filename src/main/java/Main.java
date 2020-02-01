@@ -1,5 +1,6 @@
 import Bot.Coonhbot;
 import Bot.Settings;
+import HTTPServer.Server;
 import TwitchBot.TwitchBot;
 
 import java.util.Scanner;
@@ -9,11 +10,10 @@ import java.util.concurrent.Executors;
 
 public class Main {
     public static void main(String[] args){
-
+        Server.getInstance().start();
         Settings.getInstance();
         Coonhbot bot = new Coonhbot();
         consoleScanner(bot);
-        bot.saveCurrency();
         bot.start();
     }
 

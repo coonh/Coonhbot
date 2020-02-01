@@ -1,10 +1,9 @@
 package TwitchBot;
 
-import TwitchBot.User;
-import TwitchBot.TwitchBot;
 import com.cavariux.twitchirc.Json.JsonArray;
 import com.cavariux.twitchirc.Json.JsonObject;
 import com.cavariux.twitchirc.Json.JsonValue;
+
 import TwitchBot.TwitchAPIConnections.ChannelQueries;
 import java.io.BufferedReader;
 import java.io.IOException;

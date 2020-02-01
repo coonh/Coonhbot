@@ -16,7 +16,17 @@ import commandModule.CommandManager;
 
 public class Server {
 
-    public static void main(String args []){
+    private static Server instance;
+
+    public static Server getInstance(){
+        if (Server.instance == null) {
+            Server.instance = new Server();
+        }
+        return Server.instance;
+
+    }
+
+    public void start(){
         HttpServer server = null;
         try {
             server = HttpServer.create(new InetSocketAddress(8000), 0);
