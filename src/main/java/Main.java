@@ -9,6 +9,7 @@ import java.util.concurrent.Executors;
 
 public class Main {
     public static void main(String[] args){
+
         Settings.getInstance();
         Coonhbot bot = new Coonhbot();
         consoleScanner(bot);

@@ -1,4 +1,4 @@
-package Bot;
+package commandModule;
 
 import org.json.JSONObject;
 
@@ -10,7 +10,7 @@ import FileLoader.FileLoader;
 public class CommandManager {
 
     private static CommandManager instance;
-    private HashMap<String,Command> commands = new HashMap();
+    private HashMap<String, Command> commands = new HashMap();
 
     private CommandManager(){
         System.out.println("::::: Loading Commands :::::");
@@ -55,10 +55,23 @@ public class CommandManager {
     }
 
     public void addCommand(Command c){
-        if(commands.containsKey(c.name)) commands.put(c.name,c);
-        else{
-            System.err.println("Command \""+c.name+"\" found" );
+        if(!commands.containsKey(c.name)){
+            commands.put(c.name,c);
+            System.out.println("Ich speicher jetzt");
+            saveCommands();
         }
+        else{
+            System.err.println("Command \""+c.name+"\" already exists" );
+        }
+    }
+
+    public void addCommand(String c){
+        try {
+            addCommand(JSONtoCommand(new JSONObject(c)));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 
     public void removeCommand(String commandName){

@@ -3,7 +3,7 @@ package TwitchBot.TwitchAPIConnections;
 import TwitchBot.Channel;
 import TwitchBot.User;
 import com.cavariux.twitchirc.Json.JsonObject;
-import com.cavariux.twitchirc.TwitchAPIConnections.UserQueries;
+import TwitchBot.TwitchAPIConnections.UserQueries;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

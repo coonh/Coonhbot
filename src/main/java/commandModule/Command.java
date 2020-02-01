@@ -1,11 +1,12 @@
-package Bot;
+package commandModule;
 
 public class Command {
     public String name;
     public   int cost;
     public boolean enabled;
+    public PERMISSION permission;
     public int global_cooldown; //in minutes
-    public   int user_cooldown; //TODO will be added after global cooldown works
+    public int user_cooldown; //TODO will be added after global cooldown works
     public String response;
 
     /**
@@ -14,7 +15,7 @@ public class Command {
      * Also special commands that handle scriptlike behavior or needs extra logic need to be possible
      */
 
-    public Command(String name,int cost,boolean enabled, int global_cooldown, int user_cooldown, String response){
+    public Command(String name,int cost,boolean enabled,int global_cooldown, int user_cooldown, String response){
         this.name=name;
         this.cost=cost;
         this.enabled=enabled;

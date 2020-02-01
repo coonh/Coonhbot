@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-    implementation fileTree(dir: 'E:/IntelliJ/Libaries', include: ['*.jar'])
+    implementation fileTree(dir: 'C:/Users/Denni/IdeaProjects/Libarys', include: ['*.jar'])
     compile group: 'org.json', name: 'json', version: '20190722'
 }
 jar {

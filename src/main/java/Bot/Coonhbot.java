@@ -53,6 +53,6 @@ public class Coonhbot extends TwitchBot {
     @Override
     public void onCommand(User user, Channel channel, String command)
     {
-
+        //TODO Handle events that get triggered by ! in chat
     }
 }

@@ -1,0 +1,159 @@
+body{
+    background-color: #3d3d3d;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    margin-left: -1%;
+    padding-left: 1%;
+    margin-top: 0%;
+    width: 15%;
+    background-color:#282828;
+    height: 100vh;
+    position: absolute;
+  }
+  
+  li a {
+    display: block;
+    color: rgb(255, 255, 255);
+    padding: 8px 16px;
+    background-color: #282828;
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+    border-bottom: 1px solid #525252;
+}
+.logo{
+    color: white;
+    text-align: center;
+    font-family: 'Consolas', sans-serif;
+    font-size: x-large;
+    line-height: 180%;
+    border-bottom: 1px solid #525252;
+
+    
+}
+  
+  li a:hover {
+    background-color: #3e3e3e;
+    color: white;
+  }
+  .mainSpace{
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    margin-top: 0%;
+    font-size: x-large;
+    padding-top: 1%;
+    padding-left: 3%;
+    
+    margin-left: 15%;
+    width: 82%;
+    height: 100vh;
+    background-color:#1f1f1f;
+  }
+  .active {
+    background-color: #3e3e3e;
+    color: white;
+  }
+  .active:hover{
+    background-color: #525252;
+  }
+  input{
+      height: 20px;
+      background-color: #4d4d4d2d;
+      border-color: transparent;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      color: white;
+      font-size:large;
+      padding-left: 10px;
+      width: 200px;
+  }
+  .shortinput{
+      width: 80px;
+  }
+  table{
+      background-color: rgb(20, 20, 20);
+      margin-right: 2%;
+      
+  }
+  button{
+      height: 40px;
+      width: 100px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      color: white;
+      font-size:large;
+      background-color: transparent;
+      border-radius: 10%;
+      border-color: white;
+      border-width: 4px;
+  }
+  select{
+    background-color: #4d4d4d2d;
+    border-color: transparent;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    font-size:large;
+    padding-left: 10px;
+    width: 200px;
+    border-radius: 3px;
+  }
+  .option{
+    position: absolute;
+    background-color: #3e3e3e;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  }
+  .slidecontainer {
+    width: 100%; /* Width of the outside container */
+  }
+  
+  /* The slider itself */
+  .slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 25px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+  }
+  
+  /* Mouse-over effects */
+  .slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #4CAF50; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #4CAF50; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+  #respTable{
+      margin-top: 10px;
+      width: 98%;
+  }
+  textarea{
+    background-color: #4d4d4d2d;
+    border-color: transparent;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    font-size:large;
+    padding-left: 10px;
+  }
+  

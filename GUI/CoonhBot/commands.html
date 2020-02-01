@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <ul>
+            <li class="logo"> Coonh_BOT</li>
+            <li><a href="index.html" id="topnav">Console</a></li>
+            <li><a href="commands.html" class="active">Commands</a></li>
+            <li><a href="currency.html">Currency</a></li>
+            <li><a href="settings.html">Settings</a></li>
+          </ul>
+          <div class="mainSpace">
+            <h1>Commands</h1>
+            <table cellspacing="20">
+                <tr>
+                  <td>Commandname: </td>
+                  <td><input class="longinput" type="text" name="name" value=""></td>
+                  <td>Costs: </td>
+                  <td><input class="shortinput" type="number" name="cost" value="0" min="0"></td>
+                  <td>Enabled: </td>
+                  <td><input type="checkbox" name="enabled" checked="true"></td>
+                </tr>
+                <tr>
+                  <td>Permission: </td>
+                  <td>
+                    <select>
+                        <option class="option" value="everyone">Everyone</option>
+                        <option class="option" value="regular">Regular</option>
+                        <option class="option" value="vip">VIP</option>
+                        <option class="option" value="subscriber">Subscriber</option>
+                        <option class="option" value="moderator">Moderator</option>
+                        <option class="option" value="editor">Editor</option>
+                      </select>
+                  </td>
+                  <td class="slidecontainer">Global Cooldown: </td>
+                  <td><input type="range" id="globalCooldown" value="1" max="120" min="1" style="width:100%"></td>
+                  <td id="globalOutput">1 min</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>User Cooldown: </td>
+                  <td><input type="range" id="userCooldown" value="1" max="120" min="1" style="width:100%"></td>
+                  <td id="userOutput">1 min</td>
+                </tr>
+            </table>
+            <table id="respTable">
+                <tr>
+                    <td>Response<td>
+                </tr>
+                <tr>
+                    <td><center><textarea rows="5" cols="110"></textarea></center></td>
+                </tr>
+                <tr>
+                    <td><center><button type="submit">SUBMIT</td></center>
+                </tr>
+            </table>
+
+      </div>
+      <script src="script.js"></script>
+    </body>
+</html>
